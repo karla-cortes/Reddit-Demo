@@ -1,0 +1,244 @@
+$background: #dfe7ef;
+$light-background: #eef3f7;
+$reddit-orange: #ff4400;
+$dark-purple: #1a0845;
+$nav-bar: #71829e;
+$black: #000000;
+$white: #ffffff;
+$search-bar: #f7f7f7;
+$searchbtn: #414248;
+
+@font-face {
+  font-family: "SF Display";
+  font-weight: 400;
+  src: url("https://sf.abarba.me/SF-UI-Display-Regular.otf");
+}
+
+* {
+  font-family: "SF Display";
+}
+
+body {
+  background: $background;
+  letter-spacing: 0.8px;
+}
+/* Navigation */
+
+.navigation {
+  width: 90%;
+  margin: 0 auto;
+  ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    margin-bottom: 40px;
+    li:first-child {
+      img {
+        color: $reddit-orange;
+        width: 60px;
+        height: 60px;
+        margin-right: 20px;
+      }
+    }
+    li:nth-child(2) {
+      font-weight: bold;
+      font-size: 20px;
+      margin-right: 8px;
+      color: $nav-bar;
+    }
+    li:nth-child(3) {
+      flex: 2;
+    }
+    .search-bar {
+      margin: 0 auto;
+      input[type="text"] {
+        font-size: 16px;
+        border-radius: 24px;
+        border: 1px solid $light-background;
+        background-color: $light-background;
+        padding: 10px;
+        width: 90%;
+        text-indent: 28px;
+        box-shadow: 0px 1px 1px -5px rgba(50, 88, 130, 0.32);
+      }
+      input[type="text"]:focus {
+        outline: none;
+        box-shadow: 0px 5px 5px -5px rgba(50, 88, 130, 0.32);
+      }
+      .fa-search {
+        color: $searchbtn;
+        font-size: 18px;
+        padding-top: 10px;
+        padding-left: 14px;
+        position: absolute;
+      }
+    }
+    button {
+      color: $nav-bar;
+      background: $background;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      margin-right: 8px;
+      :hover {
+        color: black;
+      }
+    }
+  }
+}
+
+/* Threads */
+.threads {
+  width: 90%;
+  margin: 0 auto;
+  img {
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    box-shadow: 0 0 0.5rem #babbbc;
+    border: 6px solid #fafafa;
+  }
+  .indvidual-thread {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: $light-background;
+    border-radius: 16px;
+    padding: 12px 40px;
+    margin-bottom: 24px;
+    box-shadow: 0px 7px 18px -5px rgba(50, 88, 130, 0.32);
+    .up-down {
+      display: flex;
+      color: $nav-bar;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 16px;
+      margin-right: 16px;
+      font-size: 16px;
+      span {
+        font-weight: bolder;
+        color: $dark-purple;
+      }
+    }
+    p {
+      font-size: 18px;
+      margin-left: 8px;
+    }
+    .title-author {
+      line-height: 16px;
+      flex: 1;
+      .author {
+        font-weight: normal;
+        flex: 1;
+        position: relative;
+        color: $nav-bar;
+        top: 10%;
+      }
+    }
+    .comments {
+      font-size: 20px;
+      background: $reddit-orange;
+      color: $white;
+      border-radius: 16px;
+      padding: 16px 32px;
+      margin-right: 16px;
+      box-shadow: -2px -2px 5px rgba(255, 255, 255, 1),
+        3px 3px 5px rgba(0, 0, 0, 0.1);
+      a {
+        margin-left: 16px;
+        color: $white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+/* Pagination */
+
+.pagination {
+  width: 90%;
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  border-radius: 6px;
+  li {
+    margin-right: 16px;
+    a {
+      color: $nav-bar;
+      padding: 16px 24px;
+      text-decoration: none;
+    }
+    .page-item.active {
+      border-radius: 16px;
+      padding: 16px 24px;
+      color: $white;
+      background: $nav-bar;
+    }
+  }
+}
+
+/* Side Bar */
+.sideBar {
+  display: none;
+  .fa-window-close {
+    display: none;
+  }
+}
+.sideBar.active {
+  display: block !important;
+  height: 100%;
+  width: 40%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  margin: 0;
+  background-color: $search-bar;
+  overflow: auto;
+  padding-top: 20px;
+  padding-bottom: 120px;
+  list-style-type: none;
+  .fa-window-close {
+    display: flex;
+    cursor: pointer;
+    justify-content: flex-end;
+    font-size: 40px;
+    color: $nav-bar;
+    margin: 0 auto;
+    width: 90%;
+  }
+  .comment {
+    margin: 0 auto;
+    width: 90%;
+    line-height: 18px;
+    margin-bottom: 24px;
+    .author {
+      font-weight: bold;
+      color: $dark-purple;
+      span {
+        color: $black;
+        font-weight: normal;
+      }
+    }
+    .comment-links {
+      list-style-type: none;
+      display: flex;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      li {
+        a {
+          text-decoration: none;
+          padding-right: 8px;
+          margin: 0;
+          font-weight: bold;
+          color: $nav-bar;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
