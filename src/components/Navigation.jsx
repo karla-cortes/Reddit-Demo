@@ -8,7 +8,7 @@ const Navigation = props => {
         <li>
           <img
             src="https://logodownload.org/wp-content/uploads/2018/02/reddit-logo-16.png"
-            alt=""
+            alt="logo"
           />
         </li>
         <li>
